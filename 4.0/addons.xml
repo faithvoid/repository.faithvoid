@@ -39,4 +39,42 @@
     </extension>
   </addon>
 
+  <addon id="script.cortanaChat" name="cortanaChat" version="1.0.0" provider-name="faithvoid">
+    <requires>
+      <import addon="xbmc.python" version="1.0" />
+    </requires>
+
+    <extension point="xbmc.service" library="default.py">
+      <provides>service</provides>
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">cortanaChat - Instant Messenger, powered by the AT Protocol!</summary>
+      <description lang="en">Send and receive messages, game invites, and more via cortanaChat, powered by the AT Protocol!</description>
+      <platform>xbox</platform>
+      <website>https://github.com/faithvoid/repository.faithvoid</website>
+      <source>https://github.com/faithvoid/repository.faithvoid</source>
+      <news>[B]1.0.0[/B][CR][I]Initial release.[/I]</news>
+    </extension>
+  </addon>
+
+  <addon id="script.cortanaChatNotifier" name="cortanaChat (Notifier)" version="1.0.0" provider-name="faithvoid">
+    <requires>
+      <import addon="xbmc.python" version="1.0" />
+    </requires>
+
+    <extension point="xbmc.service" library="default.py">
+      <provides>service</provides>
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">cortanaChat - Instant messaging, powered by the AT Protocol!</summary>
+      <description lang="en">Receive messages, game invites, and more in near-real time via cortanaChat, powered by the AT Protocol!</description>
+      <platform>xbox</platform>
+      <website>https://github.com/faithvoid/repository.faithvoid</website>
+      <source>https://github.com/faithvoid/repository.faithvoid</source>
+      <news>[B]1.0.0[/B][CR][I]Initial release.[/I]</news>
+    </extension>
+  </addon>
+
 </addons>

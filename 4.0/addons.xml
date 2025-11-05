@@ -10,9 +10,9 @@
     </extension>
 
     <extension point="xbmc.addon.metadata">
-      <summary lang="en">Get real-time session notifications from Insignia</summary>
-      <description lang="en">cortanaNotifier - real-time session notifications for Insignia.</description>
-      <platform>all</platform>
+      <summary lang="en">cortanaNotifier - real-time session notifications for Insignia</summary>
+      <description lang="en">Get real-time session notifications from Insignia! Powered by ogxbox.org</description>
+      <platform>xbox</platform>
       <website>https://github.com/faithvoid/repository.faithvoid</website>
       <source>https://github.com/faithvoid/repository.faithvoid</source>
       <news>[B]1.0.0[/B][CR][I]Initial release.[/I]</news>

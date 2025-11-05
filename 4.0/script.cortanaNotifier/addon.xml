@@ -2,11 +2,17 @@
     <requires>
         <import addon="xbmc.python" version="1.0"/>
     </requires>
-    <extension point="xbmc.python.script" library="default.py">
-        <provides>executable</provides>
+
+    <extension point="xbmc.python.script" library="default.py"/>
+
+    <extension point="xbmc.service" library="default.py">
+        <provides>program</provides>
     </extension>
-	<extension point="xbmc.addon.metadata">
+
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">cortanaNotifier - real-time session notifications for Insignia and XLink Kai</summary>
+        <description lang="en">Get real-time session and event notifications for Insignia and XLink Kai, powered by ogxbox.org!</description>
 		<platform>xbox</platform>
-		<website>https://github.com/faithvoid/repository.faithvoid</website>
-	</extension>
+        <website></website>
+    </extension>
 </addon>

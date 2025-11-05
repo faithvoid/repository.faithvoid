@@ -11,27 +11,8 @@
     </extension>
 
     <extension point="xbmc.addon.metadata">
-      <summary lang="en">cortanaNotifier - real-time session notifications for Insignia</summary>
-      <description lang="en">Get real-time session and event notifications for Insignia! Powered by ogxbox.org</description>
-      <platform>xbox</platform>
-      <website>https://github.com/faithvoid/repository.faithvoid</website>
-      <source>https://github.com/faithvoid/repository.faithvoid</source>
-      <news>[B]1.0.0[/B][CR][I]Initial release.[/I]</news>
-    </extension>
-  </addon>
-
-  <addon id="script.cortanaNotifierX" name="cortanaNotifier (XLink Kai)" version="1.0.0" provider-name="faithvoid">
-    <requires>
-      <import addon="xbmc.python" version="1.0" />
-    </requires>
-
-    <extension point="xbmc.service" library="default.py">
-      <provides>service</provides>
-    </extension>
-
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">cortanaNotifierX - real-time session notifications for XLink Kai</summary>
-      <description lang="en">Get real-time session and event notifications for XLink Kai! Powered by ogxbox.org</description>
+      <summary lang="en">cortanaNotifier - real-time session notifications for Insignia and XLink Kai</summary>
+      <description lang="en">Get real-time session and event notifications for Insignia and XLink Kai, powered by ogxbox.org!</description>
       <platform>xbox</platform>
       <website>https://github.com/faithvoid/repository.faithvoid</website>
       <source>https://github.com/faithvoid/repository.faithvoid</source>
@@ -70,6 +51,25 @@
     <extension point="xbmc.addon.metadata">
       <summary lang="en">cortanaChat - Instant messaging, powered by the AT Protocol!</summary>
       <description lang="en">Receive messages, game invites, and more in near-real time via cortanaChat, powered by the AT Protocol!</description>
+      <platform>xbox</platform>
+      <website>https://github.com/faithvoid/repository.faithvoid</website>
+      <source>https://github.com/faithvoid/repository.faithvoid</source>
+      <news>[B]1.0.0[/B][CR][I]Initial release.[/I]</news>
+    </extension>
+  </addon>
+
+  <addon id="weather.wttr.in" name="wttr.in" version="1.0.0" provider-name="faithvoid">
+    <requires>
+      <import addon="xbmc.python" version="1.0" />
+    </requires>
+
+    <extension point="xbmc.service" library="default.py">
+      <provides>service</provides>
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">wttr.in</summary>
+      <description lang="en">Weather add-on powered by the wttr.in API.</description>
       <platform>xbox</platform>
       <website>https://github.com/faithvoid/repository.faithvoid</website>
       <source>https://github.com/faithvoid/repository.faithvoid</source>

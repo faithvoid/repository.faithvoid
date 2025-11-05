@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <addons>
-  <addon id="script.cortanaNotifier" name="cortanaNotifier" version="1.0.0" provider-name="faithvoid">
+
+  <addon id="script.cortanaNotifier" name="cortanaNotifier (Insignia)" version="1.0.0" provider-name="faithvoid">
     <requires>
       <import addon="xbmc.python" version="1.0" />
     </requires>
@@ -11,7 +12,26 @@
 
     <extension point="xbmc.addon.metadata">
       <summary lang="en">cortanaNotifier - real-time session notifications for Insignia</summary>
-      <description lang="en">Get real-time session notifications from Insignia! Powered by ogxbox.org</description>
+      <description lang="en">Get real-time session and event notifications for Insignia! Powered by ogxbox.org</description>
+      <platform>xbox</platform>
+      <website>https://github.com/faithvoid/repository.faithvoid</website>
+      <source>https://github.com/faithvoid/repository.faithvoid</source>
+      <news>[B]1.0.0[/B][CR][I]Initial release.[/I]</news>
+    </extension>
+  </addon>
+
+  <addon id="script.cortanaNotifierX" name="cortanaNotifier (XLink Kai)" version="1.0.0" provider-name="faithvoid">
+    <requires>
+      <import addon="xbmc.python" version="1.0" />
+    </requires>
+
+    <extension point="xbmc.service" library="default.py">
+      <provides>service</provides>
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+      <summary lang="en">cortanaNotifierX - real-time session notifications for XLink Kai</summary>
+      <description lang="en">Get real-time session and event notifications for XLink Kai! Powered by ogxbox.org</description>
       <platform>xbox</platform>
       <website>https://github.com/faithvoid/repository.faithvoid</website>
       <source>https://github.com/faithvoid/repository.faithvoid</source>

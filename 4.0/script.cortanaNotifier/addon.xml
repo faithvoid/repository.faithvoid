@@ -1,1 +1,12 @@
-
+<addon id="script.cortanaNotifier" version="1.0.0" name="cortanaNotifier" provider-name="faithvoid">
+    <requires>
+        <import addon="xbmc.python" version="1.0"/>
+    </requires>
+    <extension point="xbmc.python.script" library="default.py">
+        <provides>executable</provides>
+    </extension>
+	<extension point="xbmc.addon.metadata">
+		<platform>xbox</platform>
+		<website>https://github.com/faithvoid/repository.faithvoid</website>
+	</extension>
+</addon>

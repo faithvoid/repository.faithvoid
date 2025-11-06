@@ -1,0 +1,18 @@
+<addon id="script.cortanaStats" version="1.0.0" name="cortanaStats" provider-name="faithvoid">
+    <requires>
+        <import addon="xbmc.python" version="1.0"/>
+    </requires>
+
+    <extension point="xbmc.python.script" library="default.py"/>
+
+    <extension point="xbmc.service" library="default.py">
+        <provides>program</provides>
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary>cortanaStats - Insignia + XLink Kai information, at a glance!</summary>
+        <description>cortanaStats delivers near-real-time session information from Insignia and XLink Kai directly to your home screen!</description>
+        <platform>xbox</platform>
+        <website></website>
+    </extension>
+</addon>

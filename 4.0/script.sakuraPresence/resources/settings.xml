@@ -1,1 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
 
+    <category label="General">
+        <setting id="default_path" type="text" label="Default Games Path" default="">
+            <summary>Change the amount of time between label updates, in seconds. Defaults to 60.</summary>
+        </setting>
+              <setting id="server_port" type="text" label="Server Port" default="1102">
+            <summary>Change the amount of time between label updates, in seconds. Defaults to 60.</summary>
+        </setting>
+    </category>
+
+</settings>

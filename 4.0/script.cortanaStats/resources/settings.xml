@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+
+    <category label="General">
+        <setting id="check_interval" type="text" label="Update Frequency (seconds)" default="60">
+            <summary>Change the amount of time between label updates, in seconds. Defaults to 60.</summary>
+        </setting>
+    </category>
+
+    <category label="Advanced">
+        <setting id="insignia_url" type="text" label="Insignia" default="https://ogxbox.org/rss/insignia.xml">
+            <summary>Change the URL of the Insignia RSS feed (not recommended unless OGXbox goes down)</summary>
+        </setting>
+        <setting id="xlink_url" type="text" label="XLink Kai" default="https://ogxbox.org/rss/xlinkkai.xml">
+            <summary>Change the URL of the XLink Kai feed (not recommended unless OGXbox goes down)</summary>
+        </setting>
+    </category>
+
+</settings>

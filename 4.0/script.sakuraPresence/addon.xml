@@ -1,1 +1,18 @@
+<addon id="script.sakuraPresence" version="1.0.0" name="sakuraPresence" provider-name="faithvoid">
+    <requires>
+        <import addon="xbmc.python" version="1.0"/>
+    </requires>
 
+    <extension point="xbmc.python.script" library="default.py"/>
+
+    <extension point="xbmc.service" library="default.py">
+        <provides>program</provides>
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary>sakuraPresence - Discord Rich Presence for Xbox</summary>
+        <description>sakuraPresence allows you to send the currently launching game's information to Discord, either via the launcher menu or near-natively with a one-key binding!</description>
+        <platform>xbox</platform>
+        <website></website>
+    </extension>
+</addon>

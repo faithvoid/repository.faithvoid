@@ -13,6 +13,6 @@
         <summary>sakuraPresence - Discord Rich Presence for Xbox</summary>
         <description>sakuraPresence allows you to send the currently launching game's information to Discord, either via the launcher menu or near-natively with a one-key binding!</description>
         <platform>xbox</platform>
-        <website></website>
+        <website>https://github.com/faithvoid/repository.faithvoid</website>
     </extension>
 </addon>

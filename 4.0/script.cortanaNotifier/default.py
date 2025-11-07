@@ -9,7 +9,7 @@ import re
 from collections import deque
 import os
 
-addon = xbmcaddon.Addon()
+addon = xbmcaddon.Addon('script.cortanaNotifier')
 INSIGNIA_EVENTS = addon.getSetting('insignia_events') == 'true'
 XLINKKAI_EVENTS = addon.getSetting('xlinkkai_events') == 'true'
 INSIGNIA_SESSIONS = addon.getSetting('insignia_sessions') == 'true'

@@ -9,7 +9,7 @@ import time
 from datetime import datetime, timedelta
 
 # Add-on settings
-addon = xbmcaddon.Addon()
+addon = xbmcaddon.Addon('script.cortanaStats')
 insignia_url = addon.getSetting("insignia_url")
 xlinkkai_url = addon.getSetting("xlinkkai_url")
 

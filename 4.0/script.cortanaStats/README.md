@@ -15,21 +15,22 @@ Primarily used for cortanaOS, but is built to be skin-agnostic.
 - For a full list of skin labels, view the "Skin Labels" section below!
 
 ## Skin Labels
+### General
 - onlinePlayers - Combined summary of online players across both Insignia and XLink Kai.
 - onlinePlayersHeader - Header-friendly version of combined online player counts.
-
+### Insignia + XLink Kai Player Counts + Sessions
 - onlineInsigniaPlayers - Current number of players online via Insignia.
 - onlineXLinkPlayers - Current number of players online via XLink Kai.
 - activeInsigniaSessions - Number of active game sessions on Insignia.
 - activeXLinkSessions - Number of active game sessions on XLink Kai.
 - insigniaSession1-5 - List the names and player counts of currently active games, usually used for <label2>
 - xlinkSession1-5 - List the names and player counts of currently active games, usually used for <label2>
-
+### Insignia Statistics
 - insigniaUsersOnline - Total Insignia users online right now.
 - insigniaRegisteredUsers - Total number of users registered on the Insignia service.
 - insigniaGamesSupported - Total number of Xbox games currently supported by Insignia.
 - insigniaActiveGames - Total number of games currently active (with users) on Insignia.
-
+### XLink Kai Statistics
 - xlinkUsersOnline - Number of users currently online on XLink Kai.
 - xlinkUsersToday - Total unique user logins today on XLink Kai.
 - xlinkServerStatus - Current status of the XLink Kai server.
@@ -39,6 +40,6 @@ Primarily used for cortanaOS, but is built to be skin-agnostic.
 - xlinkOrbitalSync - Sync status of the orbital server mesh.
 - xlinkGameTraffic - Rate of game traffic currently being relayed.
 - xlinkOrbitalTraffic - Amount of total traffic between orbital servers.
-
+### Events
 - insigniaEvents - List the next 3 upcoming scheduled game events on Insignia.
 - xlinkEvents - List the next 3 upcoming scheduled game events on XLink Kai.

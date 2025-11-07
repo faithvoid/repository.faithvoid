@@ -1,14 +1,15 @@
 # sakuraPresence - Simple Discord Rich Presence script for XBMC4Xbox / XBMC4Gamers. For use with the sakuraPresence server. (https://github.com/faithvoid/sakuraPresence)
 
-import xbmc, xbmcgui
+import xbmc, xbmcgui, xbmcaddon
 import os
 import socket
 import json
 import struct
 
 # Server port and default path
-SERVER_PORT = 1102
-DEFAULT_PATH = ''  # Optional: set to something like 'F:/Games/Retail' for faster browsing
+addon = xbmcaddon.Addon()
+DEFAULT_PATH = addon.getSetting("default_path")
+SERVER_PORT = int(addon.getSetting("server_port"))
 
 # Auto-discovery via UDP broadcast
 def discover_server(timeout=5):

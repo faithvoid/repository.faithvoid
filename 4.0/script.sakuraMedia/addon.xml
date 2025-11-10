@@ -1,1 +1,19 @@
+<addon id="script.sakuraMedia" version="1.0.0" name="sakuraMedia" provider-name="faithvoid">
+    <requires>
+        <import addon="xbmc.python" version="1.0"/>
+    </requires>
 
+    <extension point="xbmc.python.script" library="default.py"/>
+
+    <extension point="xbmc.service" library="default.py">
+        <provides>music</provides>
+        <provides>video</provides>
+    </extension>
+
+    <extension point="xbmc.addon.metadata">
+        <summary>sakuraMedia - Discord Media Rich Presence for Xbox</summary>
+        <description>sakuraMedia allows you to send the currently playing song, show or TV to Discord via sakuraPresence, with (usually) zero configuration required!</description>
+        <platform>xbox</platform>
+        <website>https://github.com/faithvoid/repository.faithvoid</website>
+    </extension>
+</addon>

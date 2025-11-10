@@ -11,9 +11,9 @@ from collections import OrderedDict
 import xbmcaddon
 
 addon = xbmcaddon.Addon()
-dashboard_enabled = True
-dashboard_type = "cortanaOS"
-SERVER_PORT = 1102
+dashboard_enabled = addon.getSetting("DASHBOARD_ENABLED")
+dashboard_type = "Xbox Media Center"
+SERVER_IP = addon.getSetting("SERVER_PORT")
 SERVER_IP = addon.getSetting("SERVER_IP")
 
 # Listen for "XBDSTATS_ONLINE" and automagically connect.

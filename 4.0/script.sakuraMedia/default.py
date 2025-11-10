@@ -1,4 +1,5 @@
-# sakuraMedia v1.0 - Discord Media Rich Presence script for XBMC4Xbox / XBMC4Gamers (and possibly XBMC360). For use with sakuraPresence. https://github.com/faithvoid/sakuraPresence/
+# sakuraMedia - Discord Rich Presence script for XBMC4Xbox / XBMC4Gamers (and possibly XBMC360). For use with sakuraPresence. (https://github.com/faithvoid/sakuraPresence)
+# Based on xbdStats by MobCat and Milenko
 
 import xbmc
 import socket
@@ -11,7 +12,7 @@ import xbmcaddon
 
 addon = xbmcaddon.Addon()
 dashboard_enabled = True
-dashboard_type = "XBMC4Xbox"
+dashboard_type = "cortanaOS"
 SERVER_PORT = 1102
 SERVER_IP = addon.getSetting("SERVER_IP")
 
@@ -27,15 +28,15 @@ def discover_server(timeout=10):
         while True:
             data, addr = sock.recvfrom(4096)
             if data == b'XBDSTATS_ONLINE':
-                print('Discovered server at', addr[0])
+                xbmc.executebuiltin('XBMC.Notification("sakuraMedia", "sakuraPresence server found!", 4000, icon-cortana.png)')
                 return addr[0]
     except socket.timeout:
-        print('Discovery timeout, no server found.')
+        xbmc.executebuiltin('XBMC.Notification("sakuraMedia", "sakuraPresence server not found, please restart the server / client and try again.", 5000, icon-cortana.png)')
         return None
     finally:
         sock.close()
 
-# Send payload to the sakuraPresence server
+# Send payload to the xbdStats server
 def send_to_server(idval, season=None, episode=None, media_type=None, server_ip="127.0.0.1"):
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
@@ -59,7 +60,7 @@ def is_music_playing():
     except:
         return False
 
-# Extracts TVDB/IMDB ID information from a matching NFO file (if available) and sends it. Fallbacks are under "get_now_playing". Needs to be updated for 4.0.
+# Extracts TVDB/IMDB ID information from a matching NFO file (if available) and sends it. Fallbacks are under "get_now_playing".
 def extract_ids_from_nfo(nfo_path):
     try:
         if not os.path.isfile(nfo_path):
@@ -137,7 +138,7 @@ def main():
     last_sent = (None, None, None)
     server_ip = discover_server()
     if not server_ip:
-        print('No sakuraPresence server found. Exiting.')
+        print('No xbdStats server found. Exiting.')
         return
 
     if dashboard_enabled and dashboard_type:
@@ -165,6 +166,6 @@ def main():
 
         if monitor.waitForAbort(5):
             break
-          
+
 if __name__ == '__main__':
     main()

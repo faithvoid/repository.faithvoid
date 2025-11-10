@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<settings>
+
+    <category label="sakuraMedia">
+        <setting id="server_ip" type="ipaddress" label="Server IP" default="">
+            <summary>IP address of the machine running sakuraPresence.</summary>
+        </setting>
+        <setting id="server_port" type="number" label="Server Port" default="1102">
+            <summary>Port of the machine running sakuraPresence.</summary>
+        </setting>
+    </category>
+
+</settings>

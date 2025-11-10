@@ -8,6 +8,12 @@
         <setting id="server_port" type="number" label="Server Port" default="1102">
             <summary>Port of the machine running sakuraPresence.</summary>
         </setting>
+        <setting id="dashboard_presence" type="bool" label="Dashboard Presence" default="true">
+            <summary>Send dashboard presence when idle.</summary>
+        </setting>
+        <setting id="dashboard" type="text" label="Dashboard" default="Xbox Media Center">
+            <summary>Dashboard name when idle.</summary>
+        </setting>
     </category>
 
 </settings>

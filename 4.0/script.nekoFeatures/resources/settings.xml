@@ -1,0 +1,5 @@
+<settings>
+    <category label="General">
+        <setting id="scan_folder" type="text" label="Default Folder" default=""/>
+    </category>
+</settings>

@@ -1,5 +1,6 @@
 <settings>
     <category label="General">
-        <setting id="scan_folder" type="text" label="Default Folder" default=""/>
+        <setting id="scan_folder" type="text" label="Default Folder" default="F:/Games"/>
+        <setting id="strict_search" type="bool" label="Strict Game Search" default="false"/>
     </category>
 </settings>

@@ -19,80 +19,22 @@
   </extension>
 </addon>
 
-  <addon id="script.cortanaNotifier" name="cortanaNotifier (Insignia)" version="1.0.0" provider-name="faithvoid">
-    <requires>
-      <import addon="xbmc.python" version="1.0" />
-    </requires>
+  <addon id="script.nekoFeatures" name="nekoFeatures" version="1.0.0" provider-name="faithvoid">
+  <requires>
+    <import addon="xbmc.python" version="2.7.18"/>
+  </requires>
+  <extension point="xbmc.python.script" library="default.py">
+    <provides>executable</provides>
+  </extension>
+    <summary lang="en_GB">Feature list browser for XBMC4Xbox, meant to be used in combination with nekoScraper metadata.</summary>
+    <description lang="en_GB">Feature list browser for XBMC4Xbox, meant to be used in combination with nekoScraper metadata.</description>
+    <platform>xbox</platform>
+    <license>GPL-2.0-or-later</license>
+    <assets>
+      <icon>resources/icon.png</icon>
+    </assets>
+  </extension>
+</addon>
 
-    <extension point="xbmc.service" library="default.py">
-      <provides>service</provides>
-    </extension>
-
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">cortanaNotifier - real-time session notifications for Insignia and XLink Kai</summary>
-      <description lang="en">Get real-time session and event notifications for Insignia and XLink Kai, powered by ogxbox.org!</description>
-      <platform>xbox</platform>
-      <website>https://github.com/faithvoid/repository.faithvoid</website>
-      <source>https://github.com/faithvoid/repository.faithvoid</source>
-      <news>[B]1.0.0[/B][CR][I]Initial release.[/I]</news>
-    </extension>
-  </addon>
-
-  <addon id="script.cortanaChat" name="cortanaChat" version="1.0.0" provider-name="faithvoid">
-    <requires>
-      <import addon="xbmc.python" version="1.0" />
-    </requires>
-
-    <extension point="xbmc.service" library="default.py">
-      <provides>service</provides>
-    </extension>
-
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">cortanaChat - Instant Messenger, powered by the AT Protocol!</summary>
-      <description lang="en">Send and receive messages, game invites, and more via cortanaChat, powered by the AT Protocol!</description>
-      <platform>xbox</platform>
-      <website>https://github.com/faithvoid/repository.faithvoid</website>
-      <source>https://github.com/faithvoid/repository.faithvoid</source>
-      <news>[B]1.0.0[/B][CR][I]Initial release.[/I]</news>
-    </extension>
-  </addon>
-
-  <addon id="script.cortanaChatNotifier" name="cortanaChat (Notifier)" version="1.0.0" provider-name="faithvoid">
-    <requires>
-      <import addon="xbmc.python" version="1.0" />
-    </requires>
-
-    <extension point="xbmc.service" library="default.py">
-      <provides>service</provides>
-    </extension>
-
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">cortanaChat - Instant messaging, powered by the AT Protocol!</summary>
-      <description lang="en">Receive messages, game invites, and more in near-real time via cortanaChat, powered by the AT Protocol!</description>
-      <platform>xbox</platform>
-      <website>https://github.com/faithvoid/repository.faithvoid</website>
-      <source>https://github.com/faithvoid/repository.faithvoid</source>
-      <news>[B]1.0.0[/B][CR][I]Initial release.[/I]</news>
-    </extension>
-  </addon>
-
-  <addon id="weather.wttr.in" name="wttr.in" version="1.0.0" provider-name="faithvoid">
-    <requires>
-      <import addon="xbmc.python" version="1.0" />
-    </requires>
-
-    <extension point="xbmc.service" library="default.py">
-      <provides>service</provides>
-    </extension>
-
-    <extension point="xbmc.addon.metadata">
-      <summary lang="en">wttr.in</summary>
-      <description lang="en">Weather add-on powered by the wttr.in API.</description>
-      <platform>xbox</platform>
-      <website>https://github.com/faithvoid/repository.faithvoid</website>
-      <source>https://github.com/faithvoid/repository.faithvoid</source>
-      <news>[B]1.0.0[/B][CR][I]Initial release.[/I]</news>
-    </extension>
-  </addon>
 
 </addons>

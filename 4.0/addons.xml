@@ -23,16 +23,20 @@
   <requires>
     <import addon="xbmc.python" version="2.7.18"/>
   </requires>
+
   <extension point="xbmc.python.script" library="default.py">
     <provides>executable</provides>
   </extension>
-  <summary lang="en_GB">Feature list browser for XBMC4Xbox, meant to be used in combination with nekoScraper metadata.</summary>
-  <description lang="en_GB">Feature list browser for XBMC4Xbox, meant to be used in combination with nekoScraper metadata.</description>
-  <platform>xbox</platform>
-  <license>GPL-2.0-or-later</license>
-  <assets>
-    <icon>resources/icon.png</icon>
-  </assets>
+
+  <extension point="xbmc.addon.metadata">
+    <summary lang="en_GB">Feature list browser for XBMC4Xbox, meant to be used in combination with nekoScraper metadata.</summary>
+    <description lang="en_GB">Feature list browser for XBMC4Xbox, meant to be used in combination with nekoScraper metadata.</description>
+    <platform>xbox</platform>
+    <license>GPL-2.0-or-later</license>
+    <assets>
+      <icon>resources/icon.png</icon>
+    </assets>
+  </extension>
 </addon>
 
 </addons>

@@ -9,12 +9,11 @@ LOG_PREFIX = "nekoScraper"
 
 insignia_aware   = addon.getSetting('insignia_aware')
 xlink_enabled    = addon.getSetting('xlink_enabled')
-hawk_enabled    = addon.getSetting('hawk_enabled')
 
 igdb_clientid    = addon.getSetting('igdb_clientid')
 igdb_clientsecret= addon.getSetting('igdb_clientsecret')
 _igdb_token_cache = {"token": None, "timestamp": 0}
-_igdb_token_ttl = 3500  # ~58 minutes (tokens last 3600s)
+_igdb_token_ttl = 3500
 
 def log(msg, level=xbmc.LOGDEBUG):
     xbmc.log("[%s] %s" % (LOG_PREFIX, msg), level=level)
@@ -225,7 +224,7 @@ def download_igdb_screenshots(game_id, token, folder):
         result = json.load(urllib2.urlopen(req, timeout=10))
 
         if not result or not isinstance(result, list):
-            log("No screenshots found for game ID %s" % game_id)
+            log("No screenshots found for %s" % game_id)
             return
 
         for i, shot in enumerate(result):
@@ -242,7 +241,6 @@ def download_igdb_screenshots(game_id, token, folder):
                     shutil.copyfileobj(resp, f)
                 resp.close()
                 shutil.move(tmp, dest)
-                log("Downloaded screenshot: %s" % dest)
             except Exception as e:
                 log("Screenshot download failed: %s -> %s" % (url, e), xbmc.LOGERROR)
     except Exception as e:
@@ -316,7 +314,6 @@ def create_synopsis_xml(out_path, info, region=None):
         if isinstance(txt, unicode): txt = txt.encode("utf-8")
         with open(out_path, "wb") as f:
             f.write(txt)
-        log("Wrote synopsis to %s" % out_path)
     except Exception as e:
         log("XML write failed: %s" % e, xbmc.LOGERROR)
 

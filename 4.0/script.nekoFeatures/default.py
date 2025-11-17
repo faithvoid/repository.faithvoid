@@ -17,18 +17,13 @@ FEATURE_ID_TABLE = {
     24: "Unique Controller", 25: "Ranking",
     26: "Xbox Live Aware", 27: "Online Multiplayer", 28: "Content Download",
     29: "User Generated Content", 30: "Scoreboards", 31: "Friends",
-    32: "Voice", 33: "Game Clips", 34: "Clans", 35: "XLink Kai", 36: "Insignia Aware", 37: "Hawk Headset"
+    32: "Voice", 33: "Game Clips", 34: "Clans", 35: "XLink Kai", 36: "Insignia Aware"
 }
 
 NAME_TO_ID = {v.lower(): k for k, v in FEATURE_ID_TABLE.items() if v}
 
 SYNONYMS = {
-    'players': 'players',
     'memory unit': 'memory unit',
-    'dolby digital': 'dolby digital sound',
-    'system link': 'system link',
-    'hdd': 'hdd',
-    'custom soundtracks': 'custom soundtracks',
     '480i': '480i',
     'hdtv': 'hdtv',
     '720p': 'hdTV 720p',
@@ -36,28 +31,9 @@ SYNONYMS = {
     'widescreen': 'widescreen',
     'pal': 'pal 50hz only',
     'ntsc': 'ntsc 60hz only',
-    'region': 'region',
     'headset': 'communicator headset',
-    'steering wheel': 'steering wheel',
-    'light gun': 'light gun',
-    'arcade stick': 'arcade stick',
-    'dance pad': 'dance pad',
-    'keyboard': 'keyboard',
-    'flight stick': 'flight stick',
-    'unique controller': 'unique controller',
-    'ranking': 'ranking',
     'xbox live': 'xbox live aware',
-    'online multiplayer': 'online multiplayer',
-    'content download': 'content download',
-    'user generated content': 'user generated content',
-    'scoreboards': 'scoreboards',
-    'friends': 'friends',
-    'voice': 'voice',
-    'game clips': 'game clips',
-    'clans': 'clans',
-    'xlink kai': 'xlink kai',
 }
-
 
 def normalize_feature_name(s):
     s_low = " ".join(s.strip().lower().split())
@@ -71,7 +47,6 @@ def normalize_feature_name(s):
                 if known in cannon_low:
                     return FEATURE_ID_TABLE[NAME_TO_ID[known]].strip()
     return s.strip()
-
 
 def parse_default_xml(path):
     try:
@@ -98,7 +73,6 @@ def parse_default_xml(path):
 
     except:
         return None, ''
-
 
 def scan_for_defaults(base_path):
     feature_map = {}
@@ -135,7 +109,6 @@ def scan_for_defaults(base_path):
                     })
     return feature_map
 
-
 def find_launchable_xbe(folder):
     try:
         for fname in os.listdir(folder):
@@ -145,14 +118,12 @@ def find_launchable_xbe(folder):
     except:
         return None
 
-
 def launch_xbe(path):
     if not path or not os.path.exists(path):
         DIALOG.ok("Error", "No XBE file found: %s" % path)
         return False
     xbmc.executebuiltin('RunXBE(%s)' % xbmc.translatePath(path))
     return True
-
 
 def main():
     folder_override = None
@@ -168,38 +139,42 @@ def main():
 
     feature_map = scan_for_defaults(base_folder)
     if not feature_map:
-        DIALOG.ok("No features found", "No _resources/default.xml files with features were found under:\n%s" % base_folder)
+        DIALOG.ok("No games found", "No _resources/default.xml files with features were found under %s" % base_folder)
         return
 
-    base_features = sorted(feature_map.keys(), key=str.lower)
-    sel = DIALOG.select("Feature", base_features)
-    if sel < 0:
-        return
-    chosen_base = base_features[sel]
+    while True:
+        base_features = sorted(feature_map.keys(), key=str.lower)
+        sel = DIALOG.select("Features", base_features)
+        if sel < 0:
+            break
+        chosen_base = base_features[sel]
 
-    sub_features = sorted(set(g['feature_full'] for g in feature_map[chosen_base]))
+        sub_features = sorted(set(g['feature_full'] for g in feature_map[chosen_base]))
 
-    if len(sub_features) == 1:
-        chosen_sub = sub_features[0]
-    else:
-        sel2 = DIALOG.select("Sub-Feature", sub_features)
-        if sel2 < 0:
-            return
-        chosen_sub = sub_features[sel2]
+        if len(sub_features) <= 1:
+            chosen_sub = sub_features[0] if sub_features else None
+        else:
+            sel2 = DIALOG.select("Sub-Features", sub_features)
+            if sel2 < 0:
+                continue
+            chosen_sub = sub_features[sel2]
 
-    games = [g for g in feature_map[chosen_base] if g['feature_full'] == chosen_sub]
+        if chosen_sub:
+            games = [g for g in feature_map[chosen_base] if g['feature_full'] == chosen_sub]
+        else:
+            games = feature_map[chosen_base]
 
-    game_labels = ["%s" % g['title'] for g in games]
-    selg = DIALOG.select("Games with: %s" % chosen_sub, game_labels)
-    if selg < 0:
-        return
-    game = games[selg]
+        game_labels = ["%s" % (g['title']) for g in games]
+        selg = DIALOG.select("Games with: %s" % (chosen_sub if chosen_sub else chosen_base), game_labels)
+        if selg < 0:
+            continue
+        game = games[selg]
 
-    candidate = find_launchable_xbe(game['folder'])
-    if candidate:
-        launch_xbe(candidate)
-    else:
-        DIALOG.ok("No XBE found", "Could not find .xbe file in %s" % game['folder'])
+        candidate = find_launchable_xbe(game['folder'])
+        if candidate:
+            launch_xbe(candidate)
+        else:
+            DIALOG.ok("No XBE found", "Could not find any .xbe file in %s" % game['folder'])
 
 if __name__ == '__main__':
     main()

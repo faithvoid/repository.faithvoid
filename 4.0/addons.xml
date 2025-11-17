@@ -25,7 +25,6 @@
   </requires>
   <extension point="xbmc.python.script" library="default.py">
     <provides>executable</provides>
-  </extension>
     <summary lang="en_GB">Feature list browser for XBMC4Xbox, meant to be used in combination with nekoScraper metadata.</summary>
     <description lang="en_GB">Feature list browser for XBMC4Xbox, meant to be used in combination with nekoScraper metadata.</description>
     <platform>xbox</platform>
@@ -33,7 +32,7 @@
     <assets>
       <icon>resources/icon.png</icon>
     </assets>
+    </extension>
 </addon>
-
 
 </addons>

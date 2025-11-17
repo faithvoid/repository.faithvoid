@@ -9,6 +9,8 @@ LOG_PREFIX = "nekoScraper"
 
 insignia_aware   = addon.getSetting('insignia_aware')
 xlink_enabled    = addon.getSetting('xlink_enabled')
+hawk_enabled    = addon.getSetting('hawk_enabled')
+screenshots_enabled    = addon.getSetting('screenshots_enabled')
 
 igdb_clientid    = addon.getSetting('igdb_clientid')
 igdb_clientsecret= addon.getSetting('igdb_clientsecret')
@@ -280,9 +282,10 @@ def create_synopsis_xml(out_path, info, region=None):
             if ig.get("summary"):
                 info["Overview"] = ig["summary"]
 
-            screenshots_dir = os.path.join(os.path.dirname(out_path), "screenshots")
-            if ig.get("id"):
-                download_igdb_screenshots(ig["id"], token, screenshots_dir)
+            if screenshots_enabled == "true":
+                screenshots_dir = os.path.join(os.path.dirname(out_path), "screenshots")
+                if ig.get("id"):
+                    download_igdb_screenshots(ig["id"], token, screenshots_dir)
 
     xml = [
         '<?xml version="1.0" encoding="UTF-8"?>',

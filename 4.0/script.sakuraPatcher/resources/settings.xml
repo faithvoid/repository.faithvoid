@@ -1,0 +1,6 @@
+<settings>
+    <category label="General">
+    <setting id="name_enabled" type="bool" label="Enter patched .xbe name manually" default="false" />
+    <setting id="overwrite_enabled" type="bool" label="Overwrite default.xbe" default="false" />
+    </category>
+</settings>

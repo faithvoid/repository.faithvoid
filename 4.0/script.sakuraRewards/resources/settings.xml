@@ -1,0 +1,15 @@
+<settings>
+    <category label="General">
+        <setting id="gamertag" type="text" label="Insignia Gamertag" default="" />
+        <setting id="first_run_done" type="bool" default="false" visible="false"/>
+        <setting id="callback_sent" type="bool" default="false" visible="false"/>
+    </category>
+    <category label="Notifications">
+        <setting id="use_g_suffix" type="bool" label="Show 'G' suffix on points" default="true" />
+        <setting id="use_p_suffix" type="bool" label="Show 'P' suffix on points" default="false" />
+        <setting id="use_gamerscore_suffix" type="bool" label="Show 'gamerscore' suffix on points" default="false" />
+        <setting id="use_points_suffix" type="bool" label="Show 'points' suffix on points" default="false" />
+        <setting type="sep"/>
+        <setting id="notification_ms" type="number" label="Notification Time (ms)" default="5000" />
+    </category>
+</settings>

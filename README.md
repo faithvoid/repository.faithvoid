@@ -10,3 +10,6 @@ Not to be confused with nekoScraper4Gamers, a collaborative version between Rock
 
 ## nekoFeatures
 Feature list browser for XBMC4Xbox, meant to be used in combination with nekoScraper metadata.
+
+## sakuraRewards
+Achievement notifier and viewer for XBMC4Xbox, powered by Insignia and xb.live.
